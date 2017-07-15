@@ -3,6 +3,8 @@ class pikalist(list) :
     def __init__(self, n=0) :
         super().__init__(self)
         self.append_sequence(n)
+        self.append('pika')
+        self.append('pika')
         
     def append_sequence(self, n=0) :
         for i in range(n) :
@@ -15,7 +17,15 @@ class pikalist(list) :
         copy = self[:]
         
         for each in copy :
-            if each%2 == 1 :
+            if type(each) is int and each%2 == 1 :
+                self.remove(each)
+
+    def remove_string_items(self) :
+        #same comment as above
+        copy = self[:]
+        
+        for each in copy :
+            if type(each) is str :
                 self.remove(each)
 
 
